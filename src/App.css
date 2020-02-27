@@ -1,0 +1,30 @@
+#app {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 auto;
+    color: rgb(87, 85, 85);
+}
+
+@media (max-width: 1000px){
+    #app{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #app main{
+        margin-left: 0;
+        margin-top: 5%;
+        align-items: center;
+    }
+
+    #app aside{
+        width: 100%;
+    }
+    
+    #app aside form{
+        margin: auto;
+
+    }
+}

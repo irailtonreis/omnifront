@@ -1,0 +1,27 @@
+main {
+    grid: 1;
+    margin-left: 2%;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+    list-style: none;
+
+}
+
+@media (max-width: 650px){
+    ul{
+        grid-template-columns: 1fr;
+
+    }
+}
+
+li{
+    width: 100%;
+}
+
+
+
+
