@@ -2,24 +2,25 @@ import React from 'react';
 import './styles.css';
 
 
-function DevItem({ dev }){
+function DevItem({ user }){
 
   async function handleDelete(e){
       console.log("evento")
   }
    
 return (
-  <li key={dev._id} className="dev-item">
+  <li   className="user-item">
   <header>
-    <img src={dev.avatar_url} alt={dev.name} />
+    {/* <img src={user.avatar_url} alt={user.name} /> */}
     <div className="user-info">
-      <p className="user-name">{dev.name}</p>
-      <p className="tecnologias">{dev.techs.join(', ')}</p>
+      <p className="user-name">{user.name}</p>
+      <p className="email">{user.email}</p>
+      <p className="email">{user.descricao}</p>
     </div>
   </header>
-  <p className="bio">{dev.bio}</p>
-    <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no GitHub</a>
-    <button className="button btn">Edit</button>
+  {/* <p className="bio">{user.bio}</p>
+    <a href={`https://github.com/${user.github_username}`}>Acessar perfil no GitHub</a> */}
+    <button className="button btn">Edit</button> 
     <button className="button" onClick={handleDelete}>Delete</button>
   </li>
 

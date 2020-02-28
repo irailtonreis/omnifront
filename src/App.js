@@ -13,26 +13,25 @@ import DevForm from './components/DevForm';
 
 function App() {
 
-    const [devs, setDevs] = useState([]);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
-      async function loadDevs(){
+      async function loadUsers(){
      
-        const response = await api.get('/devs');
+        const response = await api.get('/users');
  
-        setDevs(response.data);
+        setUsers(response.data);
 
       } 
-      loadDevs();
-    },[devs]);
+      loadUsers();
+    },[]);
 
     async function handleAddDev(data){
-
-      const response = await api.post('/devs', data)
+      const response = await api.post('/users', data);
+      console.log(users);
+    
+      setUsers([...users, response.data]);
      
-   
-      setDevs([...devs, response.data]);
-
     };
 
   return (
@@ -42,10 +41,8 @@ function App() {
     </aside>
     <main>
       <ul>
-        {devs.map(dev => (
-         
-          <DevItem key={dev._id} dev={dev}
-          />
+        {users.map(user => (
+          <DevItem key={user.email} user={user}/>
         ))}  
       </ul>
     </main>

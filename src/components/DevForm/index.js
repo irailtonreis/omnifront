@@ -4,44 +4,48 @@ import './style.css';
 
 function DevForm({ onSubmit }){
 
-    const [github_username, setGithubUsername] = useState('');
-    const [techs, setTechs] = useState('');
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [descricao, setDescricao] = useState('');
 
     async function handleSubmit(e){
         e.preventDefault();
 
         await onSubmit({
-            github_username,
-            techs,
+            nome,
+            email,
+            descricao,
         });
 
-        setGithubUsername('');
-        setTechs('');
+        setNome('');
+        setEmail('');
+        setDescricao('');
     }
    
     return (
         <form onSubmit={handleSubmit}>
         <h1>Cadastrar</h1>
           <div className="input-block">
-            <label htmlFor="github_username">Nome</label>
+            <label htmlFor="nome">Nome</label>
             <input 
-            name="github_username" 
-            id="github_username" 
+            name="nome" 
+            id="nome" 
             required 
-            value={github_username} 
-            onChange={e =>setGithubUsername(e.target.value)} />
-            <label htmlFor='techs'>Email</label>
-            <input name="techs" 
-            id="techs" 
+            value={nome} 
+            onChange={e =>setNome(e.target.value)} />
+            <label htmlFor='email'>Email</label>
+            <input type="email" name="email" 
+            id="email" 
             required 
-            value={techs} 
-            onChange={e =>setTechs(e.target.value)} />
-            <label htmlFor='desc'>Descrição</label>
-            <input name="desc" id="desc" />
-            <label id="thambnail" >
+            value={email} 
+            onChange={e =>setEmail(e.target.value)} />
+            <label htmlFor='descricao'>Descrição</label>
+            <input name="descricao" id="descricao"
+            value={descricao} 
+            onChange={e => setDescricao(e.target.value)} />
+            <label id="thambnail">Avatar</label>
                 <input type="file"/>
-                <img src="" alt="Select img" />
-            </label>
+                <img src="" alt="" />
           </div>
           <button type="submit">Salvar</button>
         </form>
