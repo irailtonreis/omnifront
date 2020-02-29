@@ -1,0 +1,60 @@
+form{
+    width: 90%;
+    padding: 2% 5%;
+    background-color: rgb(247, 248, 248);
+    background-size: cover;
+    border: 1px solid rgb(190, 188, 188);
+    box-shadow: 4px 4px 5px rgb(197, 195, 195);
+}
+
+h1{
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+form .input-block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    
+}
+label{
+    text-align: center;
+    margin: 3% 0;
+}
+
+#nome, #email, #descricao{
+    padding: 1.5%;
+    border: 1px solid rgb(252, 250, 250);
+    border-top:0;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: 0px 1px 5px rgb(211, 210, 210);
+    
+}
+
+.input-group{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-block{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+    margin: 10% 0;
+    padding: 3% 0;
+    background-color: rgb(138, 67, 204);
+    color: #fff;
+    border: 1px solid rgb(218, 215, 215);
+    box-shadow: 0px 3px 5px rgb(211, 210, 210);
+}
+
+
+button:hover{
+    background: rgb(183, 114, 240); ;
+}

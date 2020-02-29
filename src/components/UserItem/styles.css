@@ -1,4 +1,4 @@
-.dev-item{
+.user-item{
     background-color: rgb(247, 248, 248);
     background-size: cover;
     border: 1px solid rgb(190, 188, 188);
@@ -9,8 +9,6 @@
 header{
     display: flex;
     flex-direction: row;
-    
-    
 }
 
 img{
@@ -31,7 +29,7 @@ img{
     margin-bottom: 3%;
 }
 
-.tecnologias{
+.descricao{
     font-size: 14px;
 }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './style.css';
 
-function DevForm({ onSubmit }){
+function EditForm({ onSubmit }){
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -52,4 +52,4 @@ function DevForm({ onSubmit }){
     )
 }
 
-export default DevForm;
+export default EditForm;

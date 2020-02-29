@@ -7,8 +7,8 @@ import './SideBar.css';
 import './Main.css';
 
 
-import DevItem from './components/DevItem';
-import DevForm from './components/DevForm';
+import UserItem from './components/UserItem';
+import UserForm from './components/UserForm';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       async function loadUsers(){
      
         const response = await api.get('/users');
- 
+        
         setUsers(response.data);
 
       } 
@@ -28,21 +28,31 @@ function App() {
 
     async function handleAddDev(data){
       const response = await api.post('/users', data);
-      console.log(users);
+      console.log(response.data);
     
       setUsers([...users, response.data]);
-     
     };
+
+    async function deleteUser(_id){
+      const response = await api.delete(`/users/${_id}`);
+
+     const result =  users.filter(user => {
+        return user._id !== _id;
+      })
+      setUsers([result]);
+
+      console.log(result);
+    }
 
   return (
     <div id='app'>
     <aside>
-      <DevForm onSubmit={handleAddDev} />
+      <UserForm onSubmit={handleAddDev} />
     </aside>
     <main>
       <ul>
         {users.map(user => (
-          <DevItem key={user.email} user={user}/>
+          <UserItem key={user._id} user={user} deleteUser={deleteUser}/>
         ))}  
       </ul>
     </main>
